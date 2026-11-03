@@ -8,8 +8,5 @@ Abre `index.html` o habilita GitHub Pages desde la rama que contiene el proyecto
 
 Cuenta administradora inicial:
 
-- Correo: `admin@naturalapp.local`
-- Contraseña: `admin`
-
 El administrador puede crear, editar y eliminar plantas, además de consultar el panel de visitas. Las cuentas registradas son usuarios normales.
 <small>Acceso administrador: admin@naturalapp.local / admin</small>
