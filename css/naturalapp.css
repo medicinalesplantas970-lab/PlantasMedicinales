@@ -1,0 +1,353 @@
+/* Sistema visual compartido de NaturalApp. */
+:root {
+    --verde-oscuro: #063d27;
+    --verde-profundo: #032f20;
+    --verde: #218b36;
+    --verde-claro: #78d62d;
+    --blanco: #ffffff;
+    --fondo: #f1f8ed;
+    --texto: #203526;
+    --borde: #c9d8c5;
+}
+
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+[hidden] {
+    display: none !important;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    min-height: 100vh;
+    margin: 0;
+    overflow-x: hidden;
+    background: var(--fondo);
+    color: var(--texto);
+    font-family: "Segoe UI", Arial, sans-serif;
+}
+
+/* Mantiene la lectura uniforme en el contenido textual de todas las vistas. */
+p,
+li {
+    text-align: justify;
+}
+
+button,
+input,
+textarea {
+    font: inherit;
+}
+
+:where(button:not(.menu-toggle):not(.boton-circular)),
+.boton {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    padding: 13px 24px;
+    border: 3px solid var(--blanco);
+    border-radius: 50px;
+    background: linear-gradient(135deg, #36b900, #087c20);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+    color: var(--blanco);
+    cursor: pointer;
+    font-weight: 700;
+    text-decoration: none;
+    transition: transform 0.25s ease, background 0.25s ease, box-shadow 0.25s ease;
+}
+
+:where(button:not(.menu-toggle):not(.boton-circular)):hover,
+.boton:hover {
+    transform: translateY(-2px);
+    background: #75d82d;
+    box-shadow: 0 10px 26px rgba(0, 0, 0, 0.27);
+}
+
+:where(button:not(.menu-toggle):not(.boton-circular)):focus-visible,
+.boton:focus-visible,
+.menu a:focus-visible,
+input:focus-visible,
+textarea:focus-visible {
+    outline: 3px solid var(--verde-claro);
+    outline-offset: 3px;
+}
+
+.barra {
+    position: relative;
+    z-index: 100;
+    display: flex;
+    width: 100%;
+    min-height: 75px;
+    align-items: center;
+    justify-content: space-between;
+    padding: 12px 5%;
+    background: var(--verde-profundo);
+    box-shadow: 0 4px 15px rgba(5, 128, 10, 0.2);
+    animation: bajar 0.8s ease;
+}
+
+.logo {
+    color: var(--blanco);
+    font-size: 30px;
+    font-weight: 900;
+    text-decoration: none;
+    transition: transform 0.25s ease;
+}
+
+.logo:hover {
+    transform: scale(1.04);
+}
+
+.logo span {
+    color: var(--verde-claro);
+}
+
+.menu {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.menu a {
+    padding: 11px 16px;
+    border-radius: 30px;
+    color: var(--blanco);
+    font-size: 15px;
+    font-weight: 700;
+    text-decoration: none;
+    transition: background 0.25s ease, color 0.25s ease, transform 0.25s ease;
+}
+
+.menu a:hover,
+.menu a.activo {
+    transform: translateY(-2px);
+    background: var(--verde-claro);
+    color: var(--verde-profundo);
+}
+
+.menu-toggle {
+    display: none;
+    padding: 6px 10px;
+    border: 0;
+    background: transparent;
+    box-shadow: none;
+    color: var(--blanco);
+    cursor: pointer;
+    font-size: 30px;
+}
+
+.page {
+    width: min(1100px, 92%);
+    margin: 36px auto;
+}
+
+.page > h1 {
+    margin-bottom: 10px;
+    color: var(--verde-oscuro);
+    font-size: clamp(1.8rem, 4vw, 2.7rem);
+    font-weight: 900;
+}
+
+.page > p {
+    margin-bottom: 24px;
+    color: #46684e;
+    line-height: 1.65;
+}
+
+.cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(min(100%, 270px), 1fr));
+    gap: 22px;
+}
+
+.card,
+.metric {
+    border: 1px solid rgba(255, 255, 255, 0.86);
+    border-radius: 22px;
+    background: rgba(255, 255, 255, 0.91);
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+    backdrop-filter: blur(8px);
+}
+
+.card {
+    min-width: 0;
+    padding: 22px;
+    transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.2);
+}
+
+.card h2,
+.card h3,
+.page > h2 {
+    margin: 0 0 12px;
+    color: var(--verde-oscuro);
+}
+
+.card img {
+    display: block;
+    width: 100%;
+    height: 200px;
+    margin-bottom: 16px;
+    border-radius: 16px;
+    object-fit: cover;
+}
+
+.actions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-top: 16px;
+}
+
+.comment-list {
+    padding-left: 20px;
+    overflow-wrap: anywhere;
+}
+
+.comment-list li {
+    margin: 8px 0;
+}
+
+.comment-list button {
+    padding: 7px 12px;
+    border-color: transparent;
+    border-radius: 20px;
+    background: #66766a;
+    box-shadow: none;
+    font-size: 0.82rem;
+}
+
+.comment-list button:hover {
+    background: #4f5f53;
+}
+
+.comment-form {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-top: 12px;
+}
+
+input,
+textarea {
+    width: 100%;
+    min-width: 0;
+    padding: 12px 14px;
+    border: 1px solid #9ab49a;
+    border-radius: 12px;
+    background: rgba(255, 255, 255, 0.96);
+    color: var(--texto);
+}
+
+textarea {
+    min-height: 100px;
+    resize: vertical;
+}
+
+input:focus,
+textarea:focus {
+    border-color: var(--verde);
+}
+
+@keyframes bajar {
+    from {
+        opacity: 0;
+        transform: translateY(-40px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@media (max-width: 900px) {
+    .barra {
+        padding-right: 3%;
+        padding-left: 3%;
+    }
+
+    .logo {
+        font-size: 24px;
+    }
+
+    .menu {
+        gap: 2px;
+    }
+
+    .menu a {
+        padding: 10px 12px;
+        font-size: 13px;
+    }
+}
+
+@media (max-width: 600px) {
+    .barra {
+        min-height: 65px;
+    }
+
+    .logo {
+        font-size: 21px;
+    }
+
+    .menu-toggle {
+        display: inline-flex;
+    }
+
+    .menu {
+        position: absolute;
+        top: 100%;
+        left: 0;
+        display: none;
+        width: 100%;
+        flex-direction: column;
+        align-items: stretch;
+        padding: 10px;
+        background: var(--verde-profundo);
+        box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2);
+    }
+
+    .menu.abierto {
+        display: flex;
+    }
+
+    .menu a {
+        text-align: center;
+    }
+
+    .page {
+        width: 94%;
+        margin: 24px auto;
+    }
+
+    .comment-form {
+        align-items: stretch;
+        flex-direction: column;
+    }
+
+    .comment-form button {
+        align-self: flex-start;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    *,
+    *::before,
+    *::after {
+        scroll-behavior: auto !important;
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+    }
+}

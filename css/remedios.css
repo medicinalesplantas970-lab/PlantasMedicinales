@@ -1,0 +1,54 @@
+/* Ajustes exclusivos del catálogo, comentarios y acciones de remedios. */
+body {
+    background:
+        linear-gradient(rgba(241, 248, 237, 0.28), rgba(241, 248, 237, 0.36)),
+        url("../imagenes/fondo_remedios.jpeg") center / cover fixed;
+}
+
+.card {
+    background: #B6F5B9;
+}
+
+.page > p,
+.card p {
+    min-width: 0;
+    margin: 0 0 12px;
+    color: #385640;
+    line-height: 1.65;
+    text-align: justify;
+    overflow-wrap: anywhere;
+    hyphens: auto;
+}
+
+.card p strong {
+    color: var(--verde-oscuro);
+}
+
+.card h3 {
+    margin-top: 18px;
+}
+
+.comment-form input {
+    flex: 1;
+}
+
+.comment-list {
+    text-align: justify;
+}
+
+@media (max-width: 720px) {
+    body {
+        background-attachment: scroll;
+    }
+}
+
+@media (max-width: 390px) {
+    .actions {
+        display: grid;
+        grid-template-columns: 1fr;
+    }
+
+    .actions button {
+        width: 100%;
+    }
+}

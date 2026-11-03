@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>NaturalApp | Mi perfil</title>
+
+    <link rel="stylesheet" href="../css/naturalapp.css">
+    <link rel="stylesheet" href="../css/perfil.css">
+</head>
+
+<body data-page="perfil">
+
+    <div id="navbar"></div>
+
+    <!-- CONTENIDO PRINCIPAL -->
+    <main class="contenedor-perfil">
+
+        <!-- TARJETA IZQUIERDA -->
+        <aside class="tarjeta-presentacion">
+
+            <div class="decoracion">🍃</div>
+
+            <div class="foto-perfil">
+                <div class="avatar-vacio" id="avatar-vacio" aria-hidden="true">🌿</div>
+                <img alt="Foto de perfil" id="foto-usuario" hidden>
+            </div>
+
+            <div class="acciones-foto">
+                <label class="boton boton-foto" for="foto-archivo">
+                    <span id="texto-boton-foto">Añadir foto</span>
+                    <input id="foto-archivo" type="file" accept="image/*">
+                </label>
+                <button class="quitar-foto" id="quitar-foto" type="button" hidden>Quitar foto</button>
+                <p class="mensaje-foto" id="mensaje-foto">Sin foto de perfil</p>
+            </div>
+
+            <span class="etiqueta">🌿 Perfil Natural</span>
+
+            <h1 id="nombre-lateral">Administrador</h1>
+
+            <p class="frase">
+                Amor por la naturaleza 🌱
+            </p>
+
+            <div class="linea"></div>
+
+            <p class="frase-final">
+                "La naturaleza no solo nos da vida,
+                también nos enseña a vivir mejor".
+            </p>
+
+            <div class="hojitas">🌿 🍃</div>
+
+        </aside>
+
+        <!-- TARJETAS DERECHAS -->
+        <section class="contenido-perfil">
+
+            <!-- INFORMACIÓN PERSONAL -->
+            <article class="tarjeta informacion-personal">
+
+                <div class="titulo-tarjeta">
+                    <div class="icono">♧</div>
+
+                    <div>
+                        <h2>Mi perfil</h2>
+                        <p>Tu espacio personal en NaturalApp</p>
+                    </div>
+                </div>
+
+                <div class="dato">
+                    <div class="icono-dato">👤</div>
+
+                    <div>
+                        <h3>Nombre</h3>
+                        <p id="nombre-usuario">Administrador</p>
+                    </div>
+                </div>
+
+                <div class="dato">
+                    <div class="icono-dato">✉️</div>
+
+                    <div>
+                        <h3>Correo</h3>
+                        <p id="correo-usuario">admin@naturalapp.local</p>
+                    </div>
+                </div>
+
+                <div class="dato">
+                    <div class="icono-dato">◆</div>
+
+                    <div>
+                        <h3>Rol</h3>
+                        <p id="rol-usuario">Administrador</p>
+                    </div>
+                </div>
+
+            </article>
+
+            <!-- MIS FAVORITOS -->
+            <article class="tarjeta tarjeta-favoritos">
+
+                <div class="titulo-favoritos">
+
+                    <div class="corazon">♥️</div>
+
+                    <div>
+                        <h2>Mis favoritos</h2>
+                        <p>Tus plantas medicinales preferidas</p>
+                    </div>
+
+                    <span class="hoja">🌿</span>
+
+                </div>
+
+                <div class="contador">
+                    <span id="contador-favoritos">0</span>
+                    plantas favoritas
+                </div>
+
+                <div id="lista-favoritos" class="lista-favoritos">
+
+                    <div class="favoritos-vacios">
+                        <span>💚</span>
+                        <h3>Aún no tienes favoritos</h3>
+                        <p>
+                            Explora los remedios naturales y pulsa
+                            "Me encanta" para guardar tus plantas aquí.
+                        </p>
+
+                        <a href="remedios.html" class="boton boton-explorar">
+                            Explorar plantas 🌿
+                        </a>
+                    </div>
+
+                </div>
+
+            </article>
+
+        </section>
+
+    </main>
+
+    <script src="../js/storage.js" defer></script>
+    <script src="../js/app.js" defer></script>
+    <script src="../js/perfil.js" defer></script>
+
+</body>
+</html>

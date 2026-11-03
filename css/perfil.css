@@ -1,0 +1,499 @@
+/* Ajustes exclusivos de la composición del perfil. */
+body {
+    min-height: 100vh;
+    background:
+        linear-gradient(rgba(0,35,20,0.20), rgba(0,35,20,0.25)),
+        url("../imagenes/fondo_perfil.jpeg");
+
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    overflow-x: hidden;
+}
+
+/* =====================================
+   CONTENEDOR PRINCIPAL
+===================================== */
+
+.contenedor-perfil {
+    width: 95%;
+    max-width: 1250px;
+
+    margin: 35px auto;
+
+    display: grid;
+    grid-template-columns: 310px 1fr;
+
+    gap: 20px;
+
+    align-items: start;
+}
+
+/* =====================================
+   TARJETA DE PRESENTACIÓN
+===================================== */
+
+.tarjeta-presentacion {
+    position: relative;
+
+    min-height: 440px;
+
+    padding: 35px 22px;
+
+    background: rgba(245,255,238,0.95);
+
+    border: 1px solid white;
+    border-radius: 22px;
+
+    box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    text-align: center;
+
+    overflow: hidden;
+}
+
+.decoracion {
+    position: absolute;
+    top: 10px;
+    left: 15px;
+
+    font-size: 35px;
+    opacity: 0.13;
+}
+
+.foto-perfil {
+    display: grid;
+    width: 135px;
+    height: 135px;
+    place-items: center;
+
+    padding: 5px;
+
+    border: 3px solid var(--verde);
+    border-radius: 50%;
+
+    box-shadow: 0 5px 20px rgba(0,0,0,0.15);
+
+    margin-bottom: 12px;
+}
+
+.foto-perfil img {
+    display: block;
+    width: 100%;
+    height: 100%;
+
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+.avatar-vacio {
+    display: grid;
+    width: 100%;
+    height: 100%;
+    place-items: center;
+    border-radius: 50%;
+    background: linear-gradient(145deg, #e8f7df, #c8e7b9);
+    color: var(--verde);
+    font-size: 54px;
+}
+
+.acciones-foto {
+    display: grid;
+    justify-items: center;
+    gap: 8px;
+    margin-bottom: 14px;
+}
+
+.boton-foto {
+    position: relative;
+    overflow: hidden;
+    padding: 9px 18px;
+    font-size: 13px;
+}
+
+.boton-foto input {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    padding: 0;
+    opacity: 0;
+    cursor: pointer;
+}
+
+.boton-foto:focus-within {
+    outline: 3px solid var(--verde-claro);
+    outline-offset: 3px;
+}
+
+.quitar-foto {
+    padding: 7px 14px;
+    border-color: #c9d8c5;
+    background: rgba(255, 255, 255, 0.78);
+    box-shadow: none;
+    color: var(--verde-oscuro);
+    font-size: 12px;
+}
+
+.quitar-foto:hover {
+    background: #e4f2df;
+}
+
+.mensaje-foto {
+    color: #63845d;
+    font-size: 11px;
+}
+
+.etiqueta {
+    padding: 6px 15px;
+
+    background: var(--verde-oscuro);
+    color: white;
+
+    border-radius: 20px;
+
+    font-size: 11px;
+    font-weight: bold;
+}
+
+.tarjeta-presentacion h1 {
+    color: var(--verde-oscuro);
+
+    font-size: 28px;
+
+    font-style: italic;
+
+    margin-top: 18px;
+}
+
+.frase {
+    color: #63845d;
+    font-size: 13px;
+    margin-top: 8px;
+}
+
+.linea {
+    width: 75%;
+    height: 2px;
+
+    background: #c8dfbb;
+
+    margin: 22px 0;
+}
+
+.frase-final {
+    color: var(--verde-oscuro);
+
+    font-size: 14px;
+    font-style: italic;
+    line-height: 1.8;
+}
+
+.hojitas {
+    margin-top: 22px;
+    font-size: 25px;
+}
+
+/* =====================================
+   CONTENIDO DERECHO
+===================================== */
+
+.contenido-perfil {
+    display: flex;
+    flex-direction: column;
+    gap: 18px;
+}
+
+.tarjeta {
+    padding: 25px;
+
+    background: rgba(204,255,183,0.92);
+
+    border: 1px solid rgba(255,255,255,0.8);
+    border-radius: 22px;
+
+    box-shadow: 0 8px 25px rgba(0,0,0,0.16);
+
+    backdrop-filter: blur(8px);
+}
+
+/* =====================================
+   INFORMACIÓN PERSONAL
+===================================== */
+
+.titulo-tarjeta {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+
+    margin-bottom: 20px;
+}
+
+.titulo-tarjeta h2,
+.titulo-favoritos h2 {
+    color: var(--verde-oscuro);
+    font-size: 22px;
+}
+
+.titulo-tarjeta p,
+.titulo-favoritos p {
+    color: #678568;
+    font-size: 12px;
+    margin-top: 4px;
+}
+
+.icono {
+    width: 45px;
+    height: 45px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    background: linear-gradient(
+        135deg,
+        #27834d,
+        #063d27
+    );
+
+    color: white;
+    border-radius: 13px;
+
+    font-size: 25px;
+}
+
+.dato {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+
+    padding: 13px 0;
+
+    border-bottom: 1px solid rgba(16,69,47,0.15);
+}
+
+.dato:last-child {
+    border-bottom: none;
+}
+
+.icono-dato {
+    width: 43px;
+    height: 43px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    background: rgba(255,255,255,0.75);
+
+    border-radius: 50%;
+    font-size: 19px;
+}
+
+.dato h3 {
+    color: var(--verde-oscuro);
+    font-size: 13px;
+}
+
+.dato p {
+    color: #57735a;
+    font-size: 13px;
+    margin-top: 5px;
+}
+
+/* =====================================
+   MIS FAVORITOS
+===================================== */
+
+.tarjeta-favoritos {
+    background: rgba(204,255,183,0.94);
+}
+
+.titulo-favoritos {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.corazon {
+    color: #ed3981;
+    font-size: 35px;
+}
+
+.hoja {
+    margin-left: auto;
+    font-size: 25px;
+}
+
+.contador {
+    color: #547555;
+    font-size: 12px;
+    margin: 18px 0;
+}
+
+.contador span {
+    color: var(--verde-oscuro);
+    font-weight: 900;
+    font-size: 16px;
+}
+
+/* FAVORITOS VACÍOS */
+
+.favoritos-vacios {
+    text-align: center;
+    padding: 30px 15px;
+
+    background: rgba(255,255,255,0.55);
+    border-radius: 18px;
+}
+
+.favoritos-vacios span {
+    font-size: 42px;
+}
+
+.favoritos-vacios h3 {
+    color: var(--verde-oscuro);
+    font-size: 17px;
+    margin: 12px 0;
+}
+
+.favoritos-vacios p {
+    color: #638064;
+    font-size: 13px;
+    line-height: 1.7;
+}
+
+.boton-explorar {
+    margin-top: 18px;
+}
+
+/* =====================================
+   TARJETAS DE PLANTAS FAVORITAS
+===================================== */
+
+.planta-favorita {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+
+    padding: 13px;
+    margin-bottom: 12px;
+
+    background: rgba(255,255,255,0.75);
+
+    border: 1px solid #d8edce;
+    border-radius: 15px;
+
+    transition: 0.3s;
+}
+
+.planta-favorita:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+}
+
+.planta-favorita img {
+    width: 75px;
+    height: 75px;
+
+    object-fit: cover;
+    border-radius: 13px;
+}
+
+.info-planta {
+    flex: 1;
+    min-width: 0;
+}
+
+.info-planta h3 {
+    color: var(--verde-oscuro);
+    font-size: 16px;
+    text-transform: capitalize;
+}
+
+.info-planta p {
+    color: #678568;
+    font-size: 12px;
+    margin-top: 5px;
+}
+
+/* =====================================
+   TABLETS
+===================================== */
+
+@media (max-width: 900px) {
+    .contenedor-perfil {
+        grid-template-columns: 250px 1fr;
+        gap: 15px;
+    }
+
+    .tarjeta {
+        padding: 20px;
+    }
+}
+
+/* =====================================
+   CELULARES
+===================================== */
+
+@media (max-width: 600px) {
+    .contenedor-perfil {
+        width: 93%;
+        margin: 20px auto;
+
+        display: flex;
+        flex-direction: column;
+    }
+
+    .tarjeta-presentacion {
+        width: 100%;
+        min-height: 350px;
+        padding: 25px 18px;
+    }
+
+    .foto-perfil {
+        width: 115px;
+        height: 115px;
+    }
+
+    .tarjeta-presentacion h1 {
+        font-size: 25px;
+    }
+
+    .contenido-perfil {
+        width: 100%;
+    }
+
+    .tarjeta {
+        width: 100%;
+        padding: 18px;
+        border-radius: 18px;
+    }
+
+    .titulo-tarjeta h2,
+    .titulo-favoritos h2 {
+        font-size: 19px;
+    }
+
+    .planta-favorita {
+        gap: 10px;
+        padding: 10px;
+    }
+
+    .planta-favorita img {
+        width: 65px;
+        height: 65px;
+    }
+
+    .info-planta h3 {
+        font-size: 14px;
+    }
+
+    .info-planta p {
+        font-size: 11px;
+    }
+}

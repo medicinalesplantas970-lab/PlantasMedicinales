@@ -1,0 +1,46 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <!-- Permite usar caracteres españoles y adaptar la página a cualquier pantalla. -->
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>NaturalApp | Registro</title>
+    <link rel="stylesheet" href="css/naturalapp.css" />
+    <link rel="stylesheet" href="css/index.css" />
+  </head>
+  <body class="auth-page">
+    <!-- Formulario para que un visitante cree su cuenta de usuario. -->
+    <main class="auth-card">
+      <img class="brand-image" src="imagenes/planta.svg" alt="Ilustración de una planta medicinal" />
+      <h1>Crear cuenta</h1>
+
+      <!-- auth.js revisa los datos de este formulario antes de guardarlos. -->
+      <form id="registerForm">
+        <label for="name">
+          Nombre completo
+          <input id="name" required autocomplete="name" />
+        </label>
+        <label for="email">
+          Correo electrónico
+          <input id="email" type="email" required autocomplete="email" />
+        </label>
+        <label for="password">
+          Contraseña
+          <input id="password" type="password" minlength="4" required autocomplete="new-password" />
+        </label>
+        <label for="confirmPassword">
+          Confirmar contraseña
+          <input id="confirmPassword" type="password" minlength="4" required autocomplete="new-password" />
+        </label>
+        <button type="submit">Registrarme</button>
+      </form>
+
+      <!-- Espacio destinado a mensajes de error o ayuda. -->
+      <p id="formMessage" class="message" aria-live="polite"></p>
+      <p>¿Ya tienes una cuenta? <a href="index.html">Inicia sesión</a>.</p>
+    </main>
+
+    <script src="js/storage.js"></script>
+    <script src="js/auth.js"></script>
+  </body>
+</html>

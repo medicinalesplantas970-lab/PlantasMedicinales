@@ -1,0 +1,238 @@
+/* Administración de plantas: catálogo principal y formulario en diálogo. */
+body {
+    background:
+        linear-gradient(rgba(241, 248, 237, 0.27), rgba(241, 248, 237, 0.36)),
+        url("../imagenes/fondo_2.jpeg") center / cover fixed;
+}
+
+.admin-page-header,
+.admin-list-heading {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 20px;
+}
+
+.admin-page-header {
+    margin-bottom: 34px;
+}
+
+.admin-page-header h1 {
+    margin: 4px 0 8px;
+    color: var(--verde-oscuro);
+    font-size: clamp(2rem, 5vw, 2.8rem);
+    font-weight: 900;
+}
+
+.admin-page-header p:not(.admin-eyebrow) {
+    color: #506b53;
+}
+
+.admin-eyebrow {
+    color: var(--verde);
+    font-size: 0.72rem;
+    font-weight: 900;
+    letter-spacing: 0.14em;
+}
+
+#openPlantForm {
+    flex: 0 0 auto;
+}
+
+.admin-list-section {
+    padding: 24px;
+    border: 1px solid rgba(255, 255, 255, 0.9);
+    border-radius: 24px;
+    background: rgba(255, 255, 255, 0.44);
+    box-shadow: 0 8px 25px rgba(20, 68, 31, 0.08);
+    backdrop-filter: blur(8px);
+}
+
+.admin-list-heading {
+    margin-bottom: 18px;
+}
+
+.admin-list-heading h2 {
+    color: var(--verde-oscuro);
+    font-size: 1.35rem;
+}
+
+.admin-list-heading span {
+    padding: 8px 13px;
+    border-radius: 30px;
+    background: #e7f4e1;
+    color: var(--verde-oscuro);
+    font-size: 0.82rem;
+    font-weight: 800;
+}
+
+.admin-plant-card {
+    display: flex;
+    min-height: 230px;
+    flex-direction: column;
+    justify-content: space-between;
+    gap: 20px;
+}
+
+.admin-plant-card p {
+    margin-top: 10px;
+    color: #506b53;
+    line-height: 1.6;
+    text-align: justify;
+}
+
+.admin-card-actions,
+.form-actions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+.button-danger {
+    border-color: #f4d8d2;
+    background: #a94d3c;
+}
+
+.button-danger:hover {
+    background: #873c30;
+}
+
+.plant-dialog {
+    width: min(680px, calc(100% - 28px));
+    max-height: min(92vh, 900px);
+    margin: auto;
+    padding: 0;
+    overflow: auto;
+    border: 1px solid rgba(255, 255, 255, 0.9);
+    border-radius: 25px;
+    background: #f8fcf6;
+    box-shadow: 0 24px 80px rgba(0, 28, 16, 0.34);
+    color: var(--texto);
+}
+
+.plant-dialog::backdrop {
+    background: rgba(3, 47, 32, 0.62);
+    backdrop-filter: blur(5px);
+}
+
+.plant-dialog[open] {
+    animation: dialog-arrive 0.24s ease both;
+}
+
+.dialog-header {
+    position: sticky;
+    top: 0;
+    z-index: 1;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 20px;
+    padding: 23px 26px 17px;
+    border-bottom: 1px solid #e0edda;
+    background: rgba(248, 252, 246, 0.96);
+    backdrop-filter: blur(8px);
+}
+
+.dialog-header h2 {
+    margin-top: 4px;
+    color: var(--verde-oscuro);
+    font-size: 1.5rem;
+}
+
+.dialog-close {
+    width: 42px;
+    height: 42px;
+    flex: 0 0 auto;
+    padding: 0;
+    border-color: transparent;
+    border-radius: 14px;
+    background: #e8f4e2;
+    box-shadow: none;
+    color: var(--verde-oscuro);
+    font-size: 1.6rem;
+}
+
+.dialog-close:hover {
+    background: #d7ebce;
+}
+
+#plantForm {
+    display: grid;
+    gap: 16px;
+    padding: 23px 26px 26px;
+}
+
+#plantForm label {
+    display: grid;
+    gap: 8px;
+    color: var(--verde-oscuro);
+    font-size: 0.92rem;
+    font-weight: 700;
+}
+
+.form-actions {
+    justify-content: flex-end;
+    margin-top: 4px;
+}
+
+.dialog-cancel {
+    border-color: #c9d8c5;
+    background: #edf5e9;
+    box-shadow: none;
+    color: var(--verde-oscuro);
+}
+
+.dialog-cancel:hover {
+    background: #dcebd5;
+}
+
+@keyframes dialog-arrive {
+    from { opacity: 0; transform: translateY(12px) scale(0.98); }
+    to { opacity: 1; transform: translateY(0) scale(1); }
+}
+
+@media (max-width: 700px) {
+    body {
+        background-attachment: scroll;
+    }
+
+    #adminContent.page {
+        margin-top: 25px;
+    }
+
+    .admin-page-header {
+        align-items: flex-start;
+        flex-direction: column;
+    }
+
+    .admin-list-section {
+        padding: 18px 13px;
+    }
+}
+
+@media (max-width: 460px) {
+    .admin-list-heading {
+        align-items: flex-start;
+        flex-direction: column;
+    }
+
+    .admin-card-actions button {
+        flex: 1;
+        padding-right: 12px;
+        padding-left: 12px;
+    }
+
+    .dialog-header,
+    #plantForm {
+        padding-right: 18px;
+        padding-left: 18px;
+    }
+
+    .form-actions {
+        flex-direction: column;
+    }
+
+    .form-actions button {
+        width: 100%;
+    }
+}
