@@ -351,3 +351,14 @@ textarea:focus {
         transition-duration: 0.01ms !important;
     }
 }
+/* Mensaje para errores de conexión o permisos del servicio de datos. */
+.supabase-error {
+    width: min(760px, 92%);
+    margin: 18px auto;
+    padding: 14px 18px;
+    border: 1px solid #dfb9a8;
+    border-radius: 12px;
+    background: #fff4ec;
+    color: #763b2c;
+    line-height: 1.5;
+}

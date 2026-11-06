@@ -5,39 +5,24 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>NaturalApp | Iniciar sesión</title>
-    <!-- Hoja de estilos compartida por toda la aplicación. -->
     <link rel="stylesheet" href="css/naturalapp.css" />
     <link rel="stylesheet" href="css/index.css" />
   </head>
   <body class="auth-page">
-    <!-- Tarjeta que contiene el formulario para entrar a NaturalApp. -->
     <main class="auth-card">
-      <!-- Logo de la aplicación. -->
       <img class="brand-image" src="imagenes/logo.jpg" alt="Ilustración de una planta medicinal" />
       <h1>NaturalApp</h1>
       <p>Bienvenido a tu guía de plantas medicinales.</p>
-
-      <!-- El id permite que auth.js identifique este formulario. -->
       <form id="loginForm">
-        <label for="email">
-          Correo electrónico
-          <input id="email" type="email" required autocomplete="email" />
-        </label>
-        <label for="password">
-          Contraseña
-          <input id="password" type="password" required autocomplete="current-password" />
-        </label>
+        <label for="email">Correo electrónico<input id="email" type="email" required autocomplete="email" /></label>
+        <label for="password">Contraseña<input id="password" type="password" required autocomplete="current-password" /></label>
         <button type="submit">Iniciar sesión</button>
       </form>
-
-      <!-- Aquí JavaScript escribe avisos, como una contraseña incorrecta. -->
       <p id="formMessage" class="message" aria-live="polite"></p>
       <p><a href="#" id="forgotPassword">¿Olvidaste tu contraseña?</a></p>
       <p>¿No tienes una cuenta? <a href="registro.html">Crea una aquí</a>.</p>
     </main>
-
-    <!-- Primero se cargan los datos y después la lógica del formulario. -->
-    <script src="js/storage.js"></script>
-    <script src="js/auth.js"></script>
+    <script src="js/supabase-config.js"></script>
+    <script type="module" src="js/auth.js"></script>
   </body>
 </html>
